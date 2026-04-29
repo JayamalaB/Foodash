@@ -5,7 +5,14 @@ const routes = require('./routes');
 
 const app = express();
 
-app.use(cors());
+
+
+app.use(cors({
+  origin: [
+    'http://localhost:5173',
+    'https://foodash-frontend.onrender.com'  // your Render frontend URL
+  ]
+}));
 app.use(express.json());
 
 // Health check
